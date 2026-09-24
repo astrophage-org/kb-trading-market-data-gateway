@@ -2,10 +2,11 @@
 mission: SOL-3
 title: 'Market data tracking visibility on the UI'
 role: business
-status: draft
+status: approved
 version: 1
 author: Akash Bajpai
 ai_drafted: false
+approved_at: 2026-09-24T12:31:22Z
 ---
 
 # Business requirement: Market data tracking visibility on the UI
