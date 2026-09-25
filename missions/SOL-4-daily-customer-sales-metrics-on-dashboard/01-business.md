@@ -2,10 +2,11 @@
 mission: SOL-4
 title: 'Daily Customer Sales Metrics on Dashboard'
 role: business
-status: draft
+status: approved
 version: 2
 author: Akash Bajpai
 ai_drafted: false
+approved_at: 2026-09-25T15:46:10Z
 ---
 
 # Business requirement: Daily Customer Sales Metrics on Dashboard
