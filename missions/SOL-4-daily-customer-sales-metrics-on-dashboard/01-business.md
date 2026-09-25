@@ -3,7 +3,7 @@ mission: SOL-4
 title: 'Daily Customer Sales Metrics on Dashboard'
 role: business
 status: draft
-version: 1
+version: 2
 author: Akash Bajpai
 ai_drafted: false
 ---
@@ -31,6 +31,15 @@ Currently, business managers, account executives, and operations teams cannot vi
   - Should sales data update in near real-time throughout the trading day, or only finalize at end-of-day settlement?
   - Which specific metrics constitute "sales" for each customer (e.g., executed buy/sell volume, gross notional value, or net revenue/fees)?
 
+## Data requirements
+The dashboard view should present the following daily data attributes per customer:
+- **Customer Identifier**: Account ID, Customer Name, or Organization code.
+- **Date**: The specific trading/calendar day for the aggregated record.
+- **Total Sales / Notional Value**: Total gross currency/monetary value transacted by the customer on that date.
+- **Total Volume**: Total number of units, shares, or contracts executed for the customer on that date.
+- **Transaction / Trade Count**: Total count of completed execution records (from matched trade events [[kb:market-data-gateway/entities/order-matching-engine]]) for that customer during the day.
+- **Product / Asset Breakdown**: (Optional/Filterable) Breakdown of sales figures by traded symbol or pair.
+
 ## What "done" looks like
 A business user can log into the dashboard, navigate to the sales section, and immediately view a clear breakdown of daily sales figures for each customer. The user can switch dates and verify accurate daily totals without manual calculations or external reporting tools.
 
@@ -41,5 +50,5 @@ A business user can log into the dashboard, navigate to the sales section, and i
 ## Verification checklist
 - [ ] I can log into the dashboard and locate a view displaying daily sales broken down by customer.
 - [ ] I can change the selected date to review customer sales figures for previous days.
-- [ ] The aggregated daily sales totals match the actual completed customer transactions for the chosen day.
+- [ ] The aggregated daily sales totals (notional value, volume, trade count) match the actual completed customer transactions for the chosen day.
 - [ ] The data related to customer sales per day is now clearly visible and accessible on the dashboard.
