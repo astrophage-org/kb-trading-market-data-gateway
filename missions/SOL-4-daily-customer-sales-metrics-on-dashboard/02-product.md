@@ -3,7 +3,7 @@ mission: SOL-4
 title: 'Daily Customer Sales Metrics on Dashboard'
 role: product
 status: ai_drafted
-version: 1
+version: 2
 author: Sol
 ai_drafted: true
 ---
@@ -58,6 +58,12 @@ Provide a dedicated dashboard view and metrics aggregation service that displays
 
 ## Priority
 **P2** — High operational and business value. While core trade execution and order book distribution proceed independently via the [[kb:market-data-gateway/concepts/ingestion-egress-decoupling|Market Data Gateway]], daily sales reporting is essential for commercial account management and operational reporting.
+
+## Rollback
+
+- **Feature Flag Deactivation**: If data discrepancies, dashboard latency issues, or UI regressions occur, the daily customer sales dashboard view can be toggled off via feature flag without requiring a full service redeployment.
+- **Operational Fallback**: In the event of a rollback, sales and operations teams will temporarily revert to existing manual reporting and back-office trade settlement queries without impact on daily operations.
+- **Zero Impact on Trading Streams**: Disabling or rolling back the customer sales aggregation view does not affect upstream trade execution processing or real-time event streaming on `nte.trades.matched` [[kb:market-data-gateway/decisions/independent-consumer-groups]].
 
 ## Verification checklist
 - [ ] AC-1: Dashboard displays daily customer sales section on current trading day.
